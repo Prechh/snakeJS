@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap"
+      rel="stylesheet"
+    />
+    <title>Snake en JS</title>
+  </head>
+  <body>
+    <div id="rules">
+      <h2>Règles du jeu Snake</h2>
+
+      <p>
+        Fais grandir <span class="text-green">ton serpent</span> en mangeant des
+        pommes sans te mordre ni heurter les murs.
+      </p>
+
+      <h3>Contrôles</h3>
+      <ul>
+        <li>Utilise les flèches directionnelles pour te déplacer</li>
+        <li>
+          Appuie sur la touche <strong>P</strong> pour mettre en pause ou
+          reprendre le jeu
+        </li>
+      </ul>
+
+      <h3>Pommes</h3>
+      <ul>
+        <li>
+          <span class="text-red">les pommes</span> apparaissent aléatoirement
+          sur la grille
+        </li>
+        <li>Chaque pomme mangée augmente ton score</li>
+        <li>Le serpent devient plus rapide à chaque pomme</li>
+      </ul>
+
+      <h3>Bonus (power-ups)</h3>
+      <ul>
+        <li id="li-bonus">
+          <span class="text-cyan">Bouclier</span> : te protège pendant un court
+          instant d’une collision avec un mur une seule fois
+        </li>
+        <li id="li-bonus">
+          <span class="text-yellow">Double point</span> : double les points
+          pendant 10 secondes, la vitesse de déplacement est plus élevé
+        </li>
+        <li id="li-bonus">
+          <span class="text-blue">Ralentissement</span> : réduit temporairement
+          la vitesse de déplacement
+        </li>
+      </ul>
+    </div>
+
+    <div class="block-game">
+      <div id="score">Score : 0</div>
+      <canvas id="game" width="400" height="400"></canvas>
+    </div>
+    <div id="menu">
+      <button id="btn-pause">Pause</button>
+      <label for="volume">Volume :</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+    </div>
+ 
+      <h2>Classement</h2>
+      <ol id="score-list"></ol>
+
+    
+      <div id="new-score-form" class="hidden">
+        <p>Félicitations ! Nouveau high score 🎉</p>
+        <input
+          type="text"
+          id="player-name"
+          maxlength="10"
+          placeholder="Ton pseudo"
+        />
+        <button id="save-score-btn">Enregistrer</button>
+      </div>
+
+      <button id="play-again-btn">Rejouer</button>
+    </div>
+
+    <div id="leaderboard2">
+      <h2>TOP 10</h2>
+      <ol id="score-list-top10"></ol>
+    </div>
+
+    <div id="menu-pause" class="hidden">
+      <h2>Jeu en pause</h2>
+
+      <button id="resume-btn">Reprendre</button>
+    </div>
+
+    <script src="snake.js"></script>
+  </body>
+</html>
