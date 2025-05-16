@@ -14,8 +14,8 @@ app.use((req, res, next) => {
 });
 
 // Connexion MongoDB
-const uri =
-  "mongodb+srv://adamadrien:Adrilou!16@snakedb.mw4jneb.mongodb.net/?retryWrites=true&w=majority&appName=snakeDB";
+
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 let scoresCollection;
 
