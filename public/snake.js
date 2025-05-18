@@ -146,6 +146,13 @@ function update(delta) {
     audioEat.play();
     score += scoreMultiplier;
     scoreEl.textContent = `Score : ${score}`;
+
+    // Animation visuelle
+    scoreEl.classList.add("pop-animation");
+    setTimeout(() => {
+      scoreEl.classList.remove("pop-animation");
+    }, 300);
+
     placeApple();
     speed += 0.2;
   } else {
