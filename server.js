@@ -14,6 +14,8 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log("📦 URI MongoDB utilisé :", process.env.MONGODB_URI);
+
 // ======== Connexion MongoDB ========
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
