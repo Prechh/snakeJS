@@ -24,7 +24,7 @@ let scoresCollection;
 async function startDb() {
   try {
     await client.connect();
-    const db = client.db("snakegame");
+    const db = client.db("snakeDB");
     scoresCollection = db.collection("scores");
     console.log("✅ Connexion à MongoDB établie.");
   } catch (err) {
